@@ -320,31 +320,24 @@ function activateTab(tabName, button) {
 // ============================================
 
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('revealed');
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { rootMargin: '0px 0px -60px 0px' });
 
-    // Observe all card elements
-    const cards = document.querySelectorAll(
-        '.program-card, .club-card, .news-card, .stat-card, .facility-card'
-    );
-
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(card);
+    // Each section's content eases in as one group
+    document.querySelectorAll(
+        '.about-grid, .programs-grid, .news-grid, .clubs-grid, .facilities-grid'
+    ).forEach(group => {
+        group.classList.add('reveal');
+        observer.observe(group);
     });
 }
 
@@ -638,7 +631,7 @@ function handleContactFormSubmit(e) {
     setTimeout(() => {
         // Show success message
         formMessage.className = 'form-message success';
-        formMessage.textContent = '✓ Thank you! Your message has been sent successfully. We will respond within 24 hours.';
+        formMessage.textContent = 'Thank you! Your message has been sent successfully. We will respond within 24 hours.';
         
         // Reset form
         form.reset();
@@ -706,5 +699,5 @@ if (document.readyState === 'loading') {
 // CONSOLE WELCOME MESSAGE
 // ============================================
 
-console.log('%c🎓 Welcome to Benevolent Islamic Secondary School', 'font-size: 16px; font-weight: bold; color: #000;');
+console.log('%cWelcome to Benevolent Islamic Secondary School', 'font-size: 16px; font-weight: bold; color: #000;');
 console.log('%cExcellence in Education | 2025-2026', 'font-size: 12px; color: #666;');

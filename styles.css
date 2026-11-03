@@ -625,19 +625,7 @@ section {
 }
 
 .values-list li {
-    padding: var(--spacing-sm);
-    padding-left: var(--spacing-lg);
-    position: relative;
-    margin-bottom: var(--spacing-md);
-}
-
-.values-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    top: var(--spacing-sm);
-    font-weight: bold;
-    color: var(--primary-black);
+    margin-bottom: var(--spacing-xs);
 }
 
 .about-stats {
@@ -678,7 +666,7 @@ section {
 
 .programs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-2xl);
 }
@@ -1240,6 +1228,7 @@ section {
 
 .newsletter-form input {
     flex: 1;
+    min-width: 0;
     padding: var(--spacing-sm);
     border: 1px solid #555;
     border-radius: var(--radius-md);
@@ -1379,8 +1368,12 @@ section {
     }
 
     .dropdown > a::after {
-        content: '▼';
-        font-size: 0.65rem;
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: translateY(-2px) rotate(45deg);
         transition: transform 0.3s ease;
         position: absolute;
         right: 20px;
@@ -1388,7 +1381,7 @@ section {
     }
 
     .dropdown.active > a::after {
-        transform: rotate(180deg);
+        transform: translateY(2px) rotate(-135deg);
     }
 
     .dropdown-menu {
@@ -2550,4 +2543,96 @@ section {
     .standard-item {
         width: 100%;
     }
+}
+
+/* ============================================
+   LINE ICONS
+   ============================================ */
+
+.line-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+}
+
+.contact-method h3 .line-icon,
+.contact-method h4 .line-icon,
+.contact-info h3 .line-icon {
+    margin-right: 0.45em;
+}
+
+/* ============================================
+   SECTION REVEAL
+   ============================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: none;
+}
+
+main section[id],
+#curriculum {
+    scroll-margin-top: 110px;
+}
+
+/* ============================================
+   PHOTOS
+   ============================================ */
+
+.page-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.news-card-feature {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.feature-photo {
+    width: 42%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+    flex-shrink: 0;
+}
+
+.feature-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-sm) 0;
+}
+
+@media (max-width: 900px) {
+    .news-card-feature {
+        grid-column: auto;
+        flex-direction: column;
+    }
+
+    .feature-photo {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .nav-menu a {
+        white-space: nowrap;
+    }
+}
+
+#curriculum {
+    margin-bottom: var(--spacing-2xl);
 }

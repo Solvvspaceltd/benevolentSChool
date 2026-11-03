@@ -50,6 +50,7 @@
                 <li class="dropdown">
                     <a href="admissions.html">Admissions</a>
                     <ul class="dropdown-menu">
+                        <li><a href="admissions.html">Admission Requirements</a></li>
                         <li><a href="how-to-apply.html">How to Apply</a></li>
                         <li><a href="scholarships-bursaries.html">Scholarships & Bursaries</a></li>
                         <li><a href="uniform.html">Uniform</a></li>
@@ -59,6 +60,7 @@
                 <li class="dropdown">
                     <a href="academic.html">Academic</a>
                     <ul class="dropdown-menu">
+                        <li><a href="academic.html#curriculum">Curriculum Overview</a></li>
                         <li><a href="academic-results.html">Recent Public Results Stats</a></li>
                         <li><a href="sixth-form.html">Sixth Form</a></li>
                         <li><a href="higher-school.html"> Senior Level Guide</a></li>
@@ -69,10 +71,12 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="student-life.html">Life at School</a>
+                    <a href="student-life.html">Life at Bene</a>
                     <ul class="dropdown-menu">
+                        <li><a href="student-life.html">Student Life</a></li>
+                        <li><a href="sports.html">Sports & Recreation</a></li>
+                        <li><a href="school-facilities.html">School Facilities</a></li>
                         <li><a href="assembly.html">Assembly</a></li>
-                        <li><a href="sports.html">Sports</a></li>
                         <li><a href="houses.html">Houses</a></li>
                         <li><a href="school-song.html">School Song</a></li>
                         <li><a href="school-band.html">School Band</a></li>
@@ -98,45 +102,107 @@
                     <li><strong>Sixth Form:</strong> Post-secondary education for specialized study and higher education preparation</li>
                 </ul>
                 
-                <h2>Core Subjects</h2>
-                <div class="subjects-grid">
-                    <div class="subject-item">
-                        <h3>Languages</h3>
-                        <ul>
-                            <li>English Language & Literature</li>
-                            <li>Arabic Language</li>
-                            <li>French</li>
-                        </ul>
+                <div id="curriculum" class="curriculum-section">
+                    <h2>Curriculum Overview</h2>
+                    <div class="curriculum-tabs">
+                        <button class="tab-button active" data-tab="core">Core Subjects</button>
+                        <button class="tab-button" data-tab="electives">Elective Subjects</button>
+                        <button class="tab-button" data-tab="Islamic">Islamic Studies</button>
                     </div>
-                    <div class="subject-item">
-                        <h3>Sciences</h3>
-                        <ul>
-                            <li>Mathematics</li>
-                            <li>Biology</li>
-                            <li>Chemistry</li>
-                            <li>Physics</li>
-                        </ul>
+                    <div class="tab-content active" id="core-content">
+                        <div class="subject-grid">
+                            <div class="subject-item">
+                                <h4>English Language</h4>
+                                <p>Literature, composition, grammar, and communication skills</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Mathematics</h4>
+                                <p>Algebra, geometry, calculus, statistics, and problem-solving</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Biology</h4>
+                                <p>Cells, genetics, ecology, human systems, and practical experiments</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Chemistry</h4>
+                                <p>Atomic structure, reactions, organic chemistry, and lab techniques</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Physics</h4>
+                                <p>Mechanics, thermodynamics, waves, electricity, and modern physics</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>History</h4>
+                                <p>Sierra Leone, African, and world history with critical analysis</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Geography</h4>
+                                <p>Physical and human geography, environmental studies, and mapping</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Social Studies</h4>
+                                <p>Civics, economics, sociology, and community development</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="subject-item">
-                        <h3>Humanities</h3>
-                        <ul>
-                            <li>History</li>
-                            <li>Geography</li>
-                            <li>Social Studies</li>
-                            <li>Islamic Studies</li>
-                        </ul>
+                    <div class="tab-content" id="electives-content">
+                        <div class="subject-grid">
+                            <div class="subject-item">
+                                <h4>French Language</h4>
+                                <p>Communication, literature, and cultural studies</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Computer Science</h4>
+                                <p>Programming, databases, networks, and IT applications</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Business Studies</h4>
+                                <p>Economics, accounting, management, and entrepreneurship</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Visual Arts</h4>
+                                <p>Drawing, painting, sculpture, and design principles</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Music</h4>
+                                <p>Theory, performance, composition, and appreciation</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Physical Education</h4>
+                                <p>Sports, fitness, health, and wellness</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="subject-item">
-                        <h3>Practical Subjects</h3>
-                        <ul>
-                            <li>Information Technology</li>
-                            <li>Physical Education</li>
-                            <li>Art & Design</li>
-                            <li>Music</li>
-                        </ul>
+                    <div class="tab-content" id="Islamic-content">
+                        <div class="subject-grid">
+                            <div class="subject-item">
+                                <h4>Quranic Studies</h4>
+                                <p>Tajweed, memorization, and interpretation of the Quran</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Islamic Jurisprudence</h4>
+                                <p>Fiqh principles, Islamic law, and applications to modern life</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Islamic History</h4>
+                                <p>Prophetic history, Islamic civilization, and influential scholars</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Arabic Language</h4>
+                                <p>Grammar, writing, reading, and Quranic Arabic</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Islamic Ethics</h4>
+                                <p>Character development, moral values, and Islamic conduct</p>
+                            </div>
+                            <div class="subject-item">
+                                <h4>Comparative Religion</h4>
+                                <p>Understanding different faiths and interfaith dialogue</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
+
                 <h2>Teaching Approach</h2>
                 <p>Our teaching methodology emphasizes:</p>
                 <ul>

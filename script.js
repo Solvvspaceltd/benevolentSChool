@@ -1,3 +1,12 @@
+// Show clean addresses when a page is opened through an old .html link
+(function () {
+    const path = window.location.pathname;
+    if (window.location.protocol.startsWith('http') && path.endsWith('.html')) {
+        const clean = path.endsWith('/index.html') ? path.slice(0, -10) : path.slice(0, -5);
+        window.history.replaceState(null, '', clean + window.location.search + window.location.hash);
+    }
+})();
+
 // ===================================
 // BENEVOLENT ISLAMIC SECONDARY SCHOOL
 // Modern Website - JavaScript

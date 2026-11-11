@@ -119,7 +119,7 @@ function initMobileMenu() {
     const navMenu = document.getElementById('nav-menu');
     const navbar = document.querySelector('.navbar');
     const body = document.body;
-    const menuBreakpoint = 1199;
+    const menuBreakpoint = 1279;
 
     if (!hamburger) return;
 
@@ -669,15 +669,16 @@ function trackEvent(eventName, eventData = {}) {
 // ============================================
 
 function initLazyLoading() {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
+    // Only images that keep their real address in data-src need swapping;
+    // images with a normal src rely on the browser's own lazy loading.
+    const images = document.querySelectorAll('img[data-src]');
+
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
                     img.src = img.dataset.src;
-                    img.removeAttribute('loading');
                     imageObserver.unobserve(img);
                 }
             });
@@ -685,7 +686,6 @@ function initLazyLoading() {
 
         images.forEach(img => imageObserver.observe(img));
     } else {
-        // Fallback for browsers that don't support Intersection Observer
         images.forEach(img => {
             img.src = img.dataset.src;
         });

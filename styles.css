@@ -2616,7 +2616,7 @@ main section[id],
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
     .nav-menu a {
         white-space: nowrap;
     }
@@ -2647,7 +2647,7 @@ a[href^="mailto:"] {
    PHONE AND TABLET NAVIGATION
    ============================================ */
 
-@media (max-width: 1199px) {
+@media (max-width: 1279px) {
     .navbar-container {
         padding: 12px 20px;
         gap: 12px;
@@ -2829,5 +2829,208 @@ a[href^="mailto:"] {
 @media (max-width: 480px) {
     .process-timeline {
         grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ============================================
+   STORY PAGES: PHOTOS, LYRICS, SLOGANS, PRINCIPALS
+   ============================================ */
+
+.container.narrow {
+    max-width: 880px;
+}
+
+.lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.photo-figure {
+    margin: var(--spacing-lg) 0;
+}
+
+.photo-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
+.photo-figure figcaption {
+    margin-top: 8px;
+    font-size: var(--font-size-small);
+    color: var(--text-light);
+}
+
+.photo-figure.portrait {
+    max-width: 420px;
+}
+
+.photo-figure.medium {
+    max-width: 560px;
+}
+
+.photo-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.photo-row.three {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
+.photo-row .photo-figure {
+    margin: 0;
+}
+
+.photo-row .photo-figure img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.song-quote,
+.pull-quote {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg);
+    background: var(--light-bg);
+    border-radius: var(--radius-md);
+}
+
+.song-quote p,
+.pull-quote p {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.pull-quote cite {
+    display: block;
+    margin-top: var(--spacing-sm);
+    font-style: normal;
+    font-size: var(--font-size-small);
+    color: var(--text-light);
+}
+
+.song-lyrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--spacing-lg) var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+}
+
+.verse h3,
+.refrain h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.verse p,
+.refrain p {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.refrain {
+    padding: var(--spacing-lg);
+    background: var(--light-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.refrain p {
+    font-weight: 600;
+}
+
+.name-list {
+    columns: 2 220px;
+    padding-left: 1.2em;
+}
+
+.slogans {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px var(--spacing-lg);
+    margin: var(--spacing-md) 0 0;
+}
+
+.slogans dt {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.slogans dd {
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.leader-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: var(--spacing-lg);
+    max-width: 680px;
+    margin: var(--spacing-xl) 0;
+}
+
+.leader {
+    margin: 0;
+}
+
+.leader img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--radius-md);
+}
+
+.leader figcaption {
+    margin-top: var(--spacing-sm);
+    color: var(--text-light);
+    font-size: var(--font-size-small);
+}
+
+.leader figcaption strong {
+    display: block;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.subject-grid.compact {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: var(--spacing-sm);
+    margin: var(--spacing-sm) 0 var(--spacing-lg);
+}
+
+.subject-grid.compact .subject-item {
+    padding: var(--spacing-md);
+}
+
+.subject-grid.compact .subject-item h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.tab-content h3 {
+    font-size: 1.1rem;
+    margin-top: var(--spacing-lg);
+}
+
+@media (max-width: 480px) {
+    .slogans {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2px;
+    }
+
+    .slogans dd {
+        margin-bottom: 12px;
     }
 }

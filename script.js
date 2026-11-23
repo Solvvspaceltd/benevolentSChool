@@ -338,7 +338,7 @@ function initScrollAnimations() {
 
     // Each section's content eases in as one group
     document.querySelectorAll(
-        '.about-grid, .programs-grid, .news-grid, .clubs-grid, .facilities-grid'
+        '.about-grid, .purpose, .values-band, .programs-grid, .news-grid, .clubs-grid, .facilities-grid'
     ).forEach(group => {
         group.classList.add('reveal');
         observer.observe(group);
